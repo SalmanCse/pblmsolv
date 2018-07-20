@@ -1,0 +1,404 @@
+  share your code using any online editor like 
+ideone.com or pastebin.com //online IDE,,,,,IDE 
+
+https://coderinme.com/find-second-largest-number-coderinme/  //website coderinme
+http://www.cplusplus.com/reference/string/string/size/ //cpp reference string
+
+https://www.youtube.com/watch?v=G3_aR6HEaiY&t=603s //find the second largest number coderinme
+
+https://prosenc.blogspot.com/2018/01/  //jim pblm1 in cpp
+Maximum Draws Hacker Rank Problem Solution.
+Problem:
+
+Jim is off to a party and is searching for a matching pair of socks. His drawer is filled with socks, each pair of a different color. In its worst case scenario, how many socks (x) should Jim remove from his drawer until he finds a matching pair?
+Input Format 
+The first line contains the number of test cases T. 
+Next T lines contains an integer N which indicates the total pairs of socks present in the drawer.
+Output Format 
+Print the number of Draws (x) Jim makes in the worst case scenario.
+Constraints 
+ 
+Sample Input
+2
+1
+2
+Sample Output
+2
+3
+Explanation 
+Case 1 : A pair of socks are present, hence exactly 2 draws for the socks to match. 
+Case 2 : 2 pair of socks are present in the drawer. The first and the second draw might result in 2 socks of different color. The 3rd sock picked will definitely match one of previously picked socks. Hence, 3.
+Solution:
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+/*
+    * Prosen Ghosh
+    * American International University - Bangladesh (AIUB)
+    *
+*/
+int main() {
+    int n,a;
+    cin >> n;
+    while(n --){
+        cin >> a;
+        cout << a+1 << endl;
+    }
+    return 0;
+}
+
+
+
+
+https://gist.github.com/abdulateef/0c06e3de306850a362bac3fc61120794  //jim pblm1 in Java
+
+Jim is off to a party and is searching for a matching pair of socks. His drawer is filled with socks, each pair of a different color. In its worst case scenario, how many socks (x) should Jim remove from his drawer until he finds a matching pair?
+
+Solv:
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+class Solution {
+    static void Main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution */
+       // Console.WriteLine("Enter the Nmber of Test Case");
+            int Size = int.Parse(Console.ReadLine());
+            int[] input = new int[Size];
+            int i;
+           // Console.WriteLine("Enter Each Test");
+            for(i = 0; i < input.Length; i++)
+            {
+                input[i] = int.Parse(Console.ReadLine());
+            }
+
+            int[] output = new int[input.Length];
+            for (int k = 0; k < output.Length; k++)
+			{
+                output[k] = ((input[k]) + 1);
+			}
+           // Console.WriteLine("Worst Case Senarior");
+            for(int m = 0; m < Size; m++)
+            {
+                Console.WriteLine(output[m] + " ");
+            }
+        
+    }
+}
+
+
+
+
+https://coderinme.com/mars-exploration-hackerrank-problem-solution/  //problem 2 solve
+
+
+Mars Exploration Hackerrank problem solution
+
+In C, C++, Competitive, Hackerrank, PythonNovember 30, 2017 hasectic
+Mars Exploration Hackerrank
+,,,,,,,,,,,,,,,,,,
+
+Suppose there is a spaceship in the space which is crashed on Mars.Let’s say it was of Saifi’s spaceship. He was trying to send sequential messages to Earth for help which are of n Sequential SOS messages.But unfortunately, the message string is hindered by cosmic rays(radiation) during transmission to Earth.
+
+Let’s say the Message in the string form is ‘S’.Now we have to find how many Saifi’s message letter get hindered by cosmic radiation while reaching to the earth.
+
+https://coderinme.com/mars-exploration…problem-solution/
+
+
+This Hackerrank question is through:
+
+https://www.hackerrank.com/challenges/mars-exploration
+
+Mars Exploration Hackerrank
+
+ 
+
+Input Format
+
+There is one line of input: a single string, S.
+
+Note: As the original message is just SOS repeated n times, S’s length will be a multiple of 3.
+
+Constraints
+
+1<=|S|<=99
+S will contain only upper case English letters.
+Output Format
+
+Print the number of letters in Sami’s message that were altered by cosmic radiation.
+
+Sample Input 0
+
+SOSSPSSQSSOR
+Sample Output 0
+
+3
+Sample Input 1
+
+SOSSOT
+Sample Output 1
+
+1
+Explanation
+
+Sample 0
+
+S = SOSSPSSQSSOR, and signal length |S|=12. Sami sent 4 SOS messages (i.e.: 12/3=4).
+
+Expected signal: SOSSOSSOSSOS
+Recieved signal: SOSSPSSQSSOR
+
+We print the number of changed letters, which is 3.
+
+Sample 1
+
+S = SOSSOT, and signal length |S|=6. Sami sent SOS messages (i.e.: 6/3=2).
+
+Expected Signal: SOSSOS
+Received Signal: SOSSOT
+
+We print the number of changed letters, which is 1.
+
+Solution
+This is an easy string problem. Construct the expected string first. It can be done by concatenating “SOS” n times where n=length(S)/3. Now use a simple loop to count how many characters mismatch. Check the problem-setters code for this approach.
+
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+
+int main(){
+    int res = 0;//Counter variable
+    string S, m = "SOS";//Input String
+    cin >> S;//Custom Input according to test case
+
+    for(int i=0; i<S.size(); i=i+3){
+        string s= S.substr(i,3);
+        
+        cout<<s<<endl;
+        if(s!=m)
+        res+=1;
+    }
+    cout<<res;
+    return 0;
+}
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String S = in.next();
+        
+        String sos = "SOS";
+        int count = 0;
+        for (int i = 0; i < S.length(); i++) {
+            if (S.charAt(i) != sos.charAt(i % 3)) count++;
+        }
+        System.out.println(count);
+     }
+}
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+
+using namespace std;
+
+
+int main(){
+    int res = 0;//Counter variable 
+    string S, m = "SOS";//Input String
+    cin >> S;//Custom Input according to test case
+    for(int i = 0;i < int(S.size());i++) res += (S[i] != m[i%3]);
+    printf("%d\n", res);
+    return 0;
+}
+S=raw_input()
+assert len(S)%3==0 and len(S)<=99
+n=len(S)/3
+exp="SOS"*n #Expected string
+ans=0
+for i in range(len(S)):
+    if exp[i]!=S[i]:
+        ans=ans+1
+print ans
+
+
+https://coderinme.com/caesar-cipher-hackerrank-problem-solution/  //problem 3 solve
+
+
+Caesar Cipher Hackerrank problem solution
+In C, C++, Competitive, Hackerrank, PythonJanuary 3, 2017 hasectic
+Caesar Cipher Hackerrank
+,,,,,,,,,,,,,
+ 
+Julius Caesar protected his confidential information by encrypting it in a cipher. Caesar’s cipher rotated every letter in a string by a fixed number, K, making it unreadable by his enemies. Given a string, S, and a number, K, encrypt S and print the resulting string.
+
+Note: The cipher only encrypts letters; symbols, such as -, remain unencrypted.
+
+Input Format
+
+
+The first line contains an integer, N, which is the length of the unencrypted string.
+The second line contains the unencrypted string, S.
+The third line contains the integer encryption key, K, which is the number of letters to rotate.
+
+Constraints
+
+1<=N<=100 0<=K<=100 S is a valid ASCII string and doesn't contain any spaces. Output Format
+
+For each test case, print the encoded string.
+
+Sample Input
+
+11
+middle-Outz
+2
+Sample Output
+
+okffng-Qwvb
+Explanation
+
+Each unencrypted letter is replaced with the letter occurring K spaces after it when listed alphabetically. Think of the alphabet as being both case-sensitive and circular; if K rotates past the end of the alphabet, it loops back to the beginning (i.e.: the letter after z is a, and the letter after Z is A).
+
+Selected Examples:
+m (ASCII 109) becomes o (ASCII 111).
+i (ASCII 105) becomes k (ASCII 107).
+– remains the same, as symbols are not encoded.
+O (ASCII 79) becomes Q (ASCII 81).
+z (ASCII 122) becomes b (ASCII 98); because is the last letter of the alphabet, a (ASCII 97) is the next letter after it in lower-case rotation.
+
+Solution
+To encrypt the string, we need to rotate the alphabets in the string by a number k. If k is a multiple of 26, then rotating the alphabets in the string by k has no effect on the string. Rotation by k is same as rotation by k+26. So by taking modulo of k with 26, we get the number of times we need to rotate the alphabets of the string. To rotate the alphabets in a string by a value k, we add k to the character. If this value exceeds the range of the alphabets, we need to wrap it back. The range of uppercase characters is from 65 (‘A’) to 90 (‘Z’). The range of lowercase characters is from 97 (‘a’) to 122 (‘z’).
+Example: For the string : “middle-Outz” and k=2
+We add 2 to ‘m’. ‘m’ becomes ‘o’. This value is within the ascii range so we don’t need to wrap it. ‘-‘ remains unaltered. ‘z’ on adding 2 becomes 124. This value lies outside the range of lowercase characters. We need to wrap this value. By taking the modulo of this value with 122, and adding this value to 96(‘a’-1) we get the rotated character.
+For lowercase characters,
+// Let char c = s[i] be a lowercase character in the string.
+k = k % 26;
+c += k;
+if(c > 122) {
+c = 96 + (c % 122);
+}
+
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+# include <ctype.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int n; 
+    scanf("%d",&n);
+    char* s = (char *)malloc(10240 * sizeof(char));
+    scanf("%s",s);
+    int k,x; 
+    scanf("%d",&k);
+    for(int i=0; i<=strlen(s);i++){
+        if( isalpha(s[i]) ){
+            if( isupper(s[i]) )
+             x='A';
+            else
+               x='a';
+           int a=(int)s[i];
+               a= x+((a+k-x)%26);
+           char c=a;
+               s[i]=c;
+        }        
+    }
+    printf("%s",s);
+    return 0;
+}
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    int n;
+    string s;
+    cin >> n;
+    cin >> s;
+    int k;
+    cin >> k;
+
+    k %= 26;
+    for (int i = 0;i < n; i++) {
+        int c = s[i];
+        if (c >= 'a' && c <= 'z') { // Lowercase characters
+            c += k;
+            if (c > 'z') { // C exceeds the ascii range of lowercase characters.
+               c = 96 + (c % 122); // wrapping from z to a
+            }
+        } else if(c >= 'A' && c <= 'Z') { // Uppercase characters
+            c += k;
+            if(c > 'Z') { // C exceeds the ascii range of uppercase characters.
+                c = 64 + (c % 90); //wrapping from Z to A
+            }
+        }
+        cout << (char)c;
+    }
+    cout << endl;
+    return 0;
+}
+n = input()
+s = list(raw_input())
+k = input() % 26
+temp = map(lambda x: ord(x), s)
+for i in range(len(s)):
+    if 65 <= temp[i] <= 90:
+        temp[i] = 65 + ((temp[i] - 65) + k) % 26
+    elif 97 <= temp[i] <= 122:
+        temp[i] = 97 + ((temp[i] - 97) + k) % 26
+print "".join(map(chr, temp))
+
+caeseripher.cpp//
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    string input;
+    int count = 0, length;
+    cout << "Enter your phrase: \n";
+    getline (cin, input);
+    length = (int)input.length();
+    for (count = 0; count < length; count++)
+    {
+      if (isalpha (input [count]))
+      {
+        input[count]=tolower(input[count]);
+        for (int i=0; i<3; i++)
+        {
+            if (input [count] == 'z')
+                input [count] = 'a';
+            else
+                input [count]++;
+        }
+    }
+ }
+ cout << "Results :\n" <<input <<endl;
+}
+
+input: amit
+output: dplw
+
